@@ -1,0 +1,30 @@
+[build-system]
+requires = [
+            "numpy", 
+            "matplotlib"
+            ]
+
+[project]
+name = "bplot"
+version = "0.0.1"
+authors = [
+  { name="Alessandro Sebastianelli", email="alessandro.sebastianelli1995@gmail.com" },
+]
+description = "bplot"
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+            "numpy", 
+            "matplotlib"
+            ]
+
+[project.urls]
+"Homepage" = "https://github.com/alessandrosebastianelli/bplot"
+"Bug Tracker" = "https://github.com/alessandrosebastianelli/bplot/issues"
+"How to contribute" = "https://github.com/alessandrosebastianelli/bplot/issues/1"

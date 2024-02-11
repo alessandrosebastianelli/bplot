@@ -1,0 +1,32 @@
+package:
+  name: bplot
+  version: "0.0.1"
+
+source:
+  path: ./
+
+build:
+  number: 0
+  script: "$PYTHON -m pip install ."
+  noarch: python
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python==3.10
+    - numpy, 
+    - matplotlib
+
+test:
+  imports:
+    - bplot
+
+about:
+  home: https://github.com/alessandrosebastianelli/bplot/
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE
+  summary: "bplot"
