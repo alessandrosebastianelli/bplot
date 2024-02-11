@@ -15,6 +15,7 @@ This package is stored on [PyPi](https://pypi.org/project/bplot/), you can easil
 
 ```bash
 pip install --upgrade bplot
+```
 
 ## How to contribute
 
