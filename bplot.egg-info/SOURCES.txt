@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+bplot/__init__.py
+bplot.egg-info/PKG-INFO
+bplot.egg-info/SOURCES.txt
+bplot.egg-info/dependency_links.txt
+bplot.egg-info/requires.txt
+bplot.egg-info/top_level.txt

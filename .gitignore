@@ -1,0 +1,12 @@
+.eggs
+.pytest_cache
+__pycache__
+hqm.egg-info
+build
+dist
+tmp
+datasets
+dataset
+.vscode
+.VSCodeCounter
+.DS_Store

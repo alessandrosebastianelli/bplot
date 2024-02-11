@@ -9,15 +9,15 @@ import os
 shutil.rmtree('./docs/', ignore_errors=True)
 
 os.mkdir("./docs/")
-os.mkdir("./docs/hqm/")
+os.mkdir("./docs/bplot/")
 
 # Build documentation
-os.system("pdoc ./hqm -o ./docs --docformat numpy --logo logo.png -t ./docs_assets/") 
+os.system("pdoc ./bplot -o ./docs --docformat numpy --logo logo.png -t ./docs_assets/") 
 shutil.copy2("./docs_assets/logo.png", "./docs/logo.png")
-shutil.copy2("./docs_assets/logo.png", "./docs/hqm/logo.png")
-shutil.copy2("./docs_assets/main-hqm.png", "./docs/main-hqm.png")
+shutil.copy2("./docs_assets/logo.png", "./docs/bplot/logo.png")
+#shutil.copy2("./docs_assets/main-bplot.png", "./docs/main-bplot.png")
 
-for p in glob.glob("./docs/hqm/*/"):
+for p in glob.glob("./docs/bplot/*/"):
     shutil.copy2("./docs_assets/logo.png", p+"/logo.png")
 
 for fld in glob.glob("./docs_assets/*/"):
