@@ -35,6 +35,7 @@ def main() -> None:
         - -y/--yvar [optional]: name of the variable in the pandas-readable file to be used for the y-axis
         - -g/--grid [optional]: if True it will add grids to the plot
         - -t/--hist [optional]: if True it will add the histogram to the plot
+        - -s/--sep [optional]:  pandas dataframe separator
     '''
 
     parser = argparse.ArgumentParser()
