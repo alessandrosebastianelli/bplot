@@ -16,32 +16,25 @@
     <nav class="pdoc">
         <label id="navtoggle" for="togglestate" class="pdoc-button"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke-linecap='round' stroke="currentColor" stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg></label>
         <input id="togglestate" type="checkbox" aria-hidden="true" tabindex="-1">
-        <div>
+        <div>            <a class="pdoc-button module-list-button" href="../bplot.html">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z"/>
+  <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+</svg>                &nbsp;bplot</a>
+
             <img src="logo.png" class="logo" alt="project logo"/>
 
             <input type="search" placeholder="Search..." role="searchbox" aria-label="search"
                    pattern=".+" required>
 
-            <h2>Overview</h2>
-            <ul>
-  <li><a href="#bplot">bplot</a>
-  <ul>
-    <li><a href="#installation">Installation</a></li>
-    <li><a href="#how-to-contribute">How to contribute</a></li>
-  </ul></li>
-</ul>
 
 
-            <h2>Packages</h2>
-            <ul>
-                    <li><a href="bplot/plot1d.html">plot1d</a></li>
-                    <li><a href="bplot/test.html">test</a></li>
-            </ul>
-                    <h2>All Functions</h2>
-                    <ul>
-                            <li><a href="bplot/plot1d.html#main">main</a></li>
-                            <li><a href="bplot/test.html#test">test</a></li>
-                    </ul>
+            <h2>Functions</h2>
+                <ul class="memberlist">
+            <li>
+                    <a class="function" href="#test">test</a>
+            </li>
+    </ul>
 
 
 
@@ -55,46 +48,49 @@
     <main class="pdoc">
             <section class="module-info">
                     <h1 class="modulename">
-bplot    </h1>
+<a href="./../bplot.html">bplot</a><wbr>.test    </h1>
 
-                        <div class="docstring"><p><img src="https://img.shields.io/github/last-commit/alessandrosebastianelli/bplot?style=flat-square" alt="GitHub last commit" />
-<img src="https://img.shields.io/github/contributors/alessandrosebastianelli/bplot?style=flat-square" alt="GitHub contributors" />
-<img src="https://img.shields.io/github/issues/alessandrosebastianelli/bplot?style=flat-square" alt="GitHub issues" />
-<img src="https://img.shields.io/github/issues-pr/alessandrosebastianelli/bplot?style=flat-square" alt="GitHub pull requests" /></p>
+                
+                        <input id="mod-test-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 
-<h1 id="bplot">bplot</h1>
+                        <label class="view-source-button" for="mod-test-view-source"><span>View Source</span></label>
 
-<p>This library contains basic scripts for fast plotting of 1D, 2D or 3D variables.</p>
-
-<p><a class="btn btn-success" href="https://alessandrosebastianelli.github.io/bplot/bplot.html" target="_blank">Click here to access the documentation</a></p>
-
-<h2 id="installation">Installation</h2>
-
-<p>This package is stored on <a href="https://pypi.org/project/bplot/">PyPi</a>, you can easily install it using pip</p>
-
-<div class="pdoc-code codehilite">
-<pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>bplot
-</code></pre>
-</div>
-
-<h2 id="how-to-contribute">How to contribute</h2>
-
-<p><a href="https://github.com/alessandrosebastianelli/bplot/issues/1">Click here</a></p>
-</div>
-
-                        <input id="mod-bplot-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
-
-                        <label class="view-source-button" for="mod-bplot-view-source"><span>View Source</span></label>
-
-                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos">1</span></a><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-2"><a href="#L-2"><span class="linenos">2</span></a><span class="sd">   .. include:: ../README.md</span>
-</span><span id="L-3"><a href="#L-3"><span class="linenos">3</span></a><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-4"><a href="#L-4"><span class="linenos">4</span></a>
-</span><span id="L-5"><a href="#L-5"><span class="linenos">5</span></a><span class="c1">#from .module import *</span>
+                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos">1</span></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</span><span id="L-2"><a href="#L-2"><span class="linenos">2</span></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span><span id="L-3"><a href="#L-3"><span class="linenos">3</span></a>
+</span><span id="L-4"><a href="#L-4"><span class="linenos">4</span></a><span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
+</span><span id="L-5"><a href="#L-5"><span class="linenos">5</span></a>
+</span><span id="L-6"><a href="#L-6"><span class="linenos">6</span></a>    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="L-7"><a href="#L-7"><span class="linenos">7</span></a>
+</span><span id="L-8"><a href="#L-8"><span class="linenos">8</span></a>    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)))</span>
+</span><span id="L-9"><a href="#L-9"><span class="linenos">9</span></a>    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </span></pre></div>
 
 
             </section>
+                <section id="test">
+                            <input id="test-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">test</span><span class="signature pdoc-code condensed">(<span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="test-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#test"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="test-5"><a href="#test-5"><span class="linenos"> 5</span></a><span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
+</span><span id="test-6"><a href="#test-6"><span class="linenos"> 6</span></a>
+</span><span id="test-7"><a href="#test-7"><span class="linenos"> 7</span></a>    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="test-8"><a href="#test-8"><span class="linenos"> 8</span></a>
+</span><span id="test-9"><a href="#test-9"><span class="linenos"> 9</span></a>    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)))</span>
+</span><span id="test-10"><a href="#test-10"><span class="linenos">10</span></a>    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></pre></div>
+
+
+    
+
+                </section>
     </main>
 <script>
     function escapeHTML(html) {
@@ -148,7 +144,7 @@ bplot    </h1>
                 script.async = true;
                 script.onload = () => resolve(window.pdocSearch);
                 script.onerror = (e) => reject(e);
-                script.src = "search.js";
+                script.src = "../search.js";
                 document.getElementsByTagName("head")[0].appendChild(script);
             });
         } catch (e) {
@@ -190,7 +186,7 @@ bplot    </h1>
             }
             for (let result of results.slice(0, 10)) {
                 let doc = result.doc;
-                let url = `${doc.modulename.replaceAll(".", "/")}.html`;
+                let url = `../${doc.modulename.replaceAll(".", "/")}.html`;
                 if (doc.qualname) {
                     url += `#${doc.qualname}`;
                 }
