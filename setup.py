@@ -16,7 +16,7 @@ def readme():
 # Package 
 HERE = pathlib.Path(__file__).parent
 PACKAGE_NAME  = 'bplot'
-VERSION = '0.0.4'
+VERSION = '0.0.9'
 AUTHOR = 'Alessandro Sebastianelli'
 AUTHOR_EMAIL = 'alessandro.sebastianelli1995@gmail.com'
 URL = 'https://github.com/alessandrosebastianelli/bplot.git'
@@ -88,4 +88,11 @@ setup(
 	author_email=AUTHOR_EMAIL, 
 	url=URL, 
 	install_requires=INSTALL_REQUIRES,
-	packages=find_packages())
+	packages=find_packages(),
+	entry_points={
+        'console_scripts': [
+            'test   = bplot.test:test',
+			'plot1d = bplot.plot1d:main'
+        ]
+    }
+	)
