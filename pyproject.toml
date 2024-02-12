@@ -7,7 +7,7 @@ requires = [
 
 [project]
 name = "bplot"
-version = "0.0.9"
+version = "0.0.10"
 authors = [
   { name="Alessandro Sebastianelli", email="alessandro.sebastianelli1995@gmail.com" },
 ]
