@@ -1,12 +1,13 @@
 [build-system]
 requires = [
             "numpy", 
-            "matplotlib"
+            "matplotlib",
+            "pandas"
             ]
 
 [project]
 name = "bplot"
-version = "0.0.4"
+version = "0.0.9"
 authors = [
   { name="Alessandro Sebastianelli", email="alessandro.sebastianelli1995@gmail.com" },
 ]
@@ -21,7 +22,8 @@ classifiers = [
 ]
 dependencies = [
             "numpy", 
-            "matplotlib"
+            "matplotlib",
+            "pandas"
             ]
 
 [project.urls]
