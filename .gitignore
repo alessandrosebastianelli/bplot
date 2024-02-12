@@ -1,7 +1,7 @@
 .eggs
 .pytest_cache
 __pycache__
-hqm.egg-info
+bplot.egg-info
 build
 dist
 tmp
