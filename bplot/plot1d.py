@@ -15,7 +15,7 @@ def main():
     parser.add_argument('-x', '--xvar', default=None,    action="store", help='Variable for x-axis')
     parser.add_argument('-y', '--yvar', default=None,    action="store", help='Variable for y-axis')
     parser.add_argument('-g', '--grid', default='False', action="store", help='Activate Grid')
-    parser.add_argument('-h', '--hist', default='False', action="store", help='Plot histogram')
+    parser.add_argument('-t', '--hist', default='False', action="store", help='Plot histogram')
     args = parser.parse_args()
 
     # Arguments    
