@@ -16,7 +16,7 @@ def readme():
 # Package 
 HERE = pathlib.Path(__file__).parent
 PACKAGE_NAME  = 'bplot'
-VERSION = '0.0.14'
+VERSION = '0.0.15'
 AUTHOR = 'Alessandro Sebastianelli'
 AUTHOR_EMAIL = 'alessandro.sebastianelli1995@gmail.com'
 URL = 'https://github.com/alessandrosebastianelli/bplot.git'
@@ -75,24 +75,24 @@ class gitcmd_sdist(sdist):
 
 
 setup(
-    cmdclass={
-		'develop': gitcmd_develop, 
-		'install': gitcmd_install, 
-		'sdist': gitcmd_sdist,
-	}, 
-	name=PACKAGE_NAME,
-	version=VERSION,
-	description=DESCRIPTION, 
-	long_description_content_type=LONG_DESC_TYPE,
-	author=AUTHOR, license=LICENSE, 
-	author_email=AUTHOR_EMAIL, 
-	url=URL, 
-	install_requires=INSTALL_REQUIRES,
-	packages=find_packages(),
-	entry_points={
-        'console_scripts': [
-            'bplottest   = bplot.test:test',
-			'bplot1d     = bplot.plot1d:main'
-        ]
-    }
+        cmdclass={
+            'develop': gitcmd_develop, 
+            'install': gitcmd_install, 
+            'sdist': gitcmd_sdist,
+        }, 
+        name=PACKAGE_NAME,
+        version=VERSION,
+        description=DESCRIPTION, 
+        long_description_content_type=LONG_DESC_TYPE,
+        author=AUTHOR, license=LICENSE, 
+        author_email=AUTHOR_EMAIL, 
+        url=URL, 
+        install_requires=INSTALL_REQUIRES,
+        packages=find_packages(),
+        entry_points={
+            'console_scripts': [
+                'bplottest   = bplot.test:test',
+                'bplot1d     = bplot.plot1d:plot1d'
+            ]
+        }
 	)
