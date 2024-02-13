@@ -24,7 +24,7 @@ def __read_data(path : str, sep : str) -> pd.DataFrame:
     db  = pd.read_csv(path, sep=sep)
     return db
 
-def main() -> None:
+def plot1d() -> tuple:
     '''
         Plot 1D variables
 
@@ -36,6 +36,11 @@ def main() -> None:
         - -g/--grid [optional]: if True it will add grids to the plot
         - -t/--hist [optional]: if True it will add the histogram to the plot
         - -s/--sep [optional]:  pandas dataframe separator
+
+        Returns
+        -------
+        - fig: matplotlib figure
+        - ax: matplolib ax/axes
     '''
 
     parser = argparse.ArgumentParser()
@@ -58,7 +63,7 @@ def main() -> None:
 
     # Plot with histogram
     if hist:
-        _, ax = plt.subplots(nrows=1, ncols=2, gridspec_kw={'width_ratios': [3,1]})
+        fig, ax = plt.subplots(nrows=1, ncols=2, gridspec_kw={'width_ratios': [3,1]})
 
         if xvar is not None and yvar is not None: 
             ax[0].plot(data[xvar], data[yvar], label=yvar)
@@ -81,7 +86,7 @@ def main() -> None:
     
     # Plot without histogram
     else:
-        _, ax = plt.subplots(nrows=1, ncols=1)
+        fig, ax = plt.subplots(nrows=1, ncols=1)
 
         if xvar   is not None and yvar is not None: 
             ax.plot(data[xvar], data[yvar], label=yvar)
@@ -102,6 +107,8 @@ def main() -> None:
 
     plt.show()
 
+    return fig, ax
+
 
 if __name__ == '__main__':
-    main()
+    plot1d()
