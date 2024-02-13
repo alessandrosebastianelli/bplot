@@ -60,12 +60,14 @@ def plot1d() -> tuple:
 
         Arguments
         ---------
-        - -p/--path [optional]: path of the pandas-readable file from where to load the data,          
-        - -x/--xvar [optional]: name of the variable in the pandas-readable file to be used for the x-axis
-        - -y/--yvar [optional]: name of the variable in the pandas-readable file to be used for the y-axis
-        - -g/--grid [optional]: if True it will add grids to the plot
-        - -t/--hist [optional]: if True it will add the histogram to the plot
-        - -s/--sep [optional]:  pandas dataframe separator
+        - -p/--path   [optional]: path of the pandas-readable file from where to load the data,          
+        - -x/--xvar   [optional]: name of the variable in the pandas-readable file to be used for the x-axis
+        - -y/--yvar   [optional]: name of the variable in the pandas-readable file to be used for the y-axis
+        - -g/--grid   [optional]: it will add grids to the plot
+        - -t/--hist   [optional]: it will add the histogram to the plot
+        - -s/--sep    [optional]: pandas dataframe separator
+        - -a/--all    [optional]: it will diplay all the variables in different plots
+        - -l/--legend [optional]: it will add the legend to the plots
 
         Returns
         -------
