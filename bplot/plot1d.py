@@ -7,7 +7,20 @@ import logging
 import json
 
 
-def __best_axis_comb(c):
+def __best_axis_comb(c : int) -> list:
+    '''
+        Calculate a and b using c from the following equation 
+        a*b=c (1) 
+        a and b are used to define a matrix of plots (a rows and b columns).
+
+        Parameters
+        ----------
+        - c: integers value used to get a and b from equation (1)
+
+        Returns
+        -------
+        - valid_pairs: list containing pairs of a and b from equation (1)
+    '''
 
     def find_factors(c):
         factors = []
@@ -61,14 +74,14 @@ def plot1d() -> tuple:
     '''
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('-p', '--path', default=None,    action="store",       help='Path to file')
-    parser.add_argument('-x', '--xvar', default=None,    action="store",       help='Variable for x-axis')
-    parser.add_argument('-y', '--yvar', default=None,    action="store",       help='Variable for y-axis')
-    parser.add_argument('-g', '--grid',                  action="store_true",  help='Activate Grid')
-    parser.add_argument('-t', '--hist',                  action="store_true",  help='Plot histogram')
-    parser.add_argument('-s', '--sep',  default=',',     action="store",       help='Pandas dataframe separator')
-    parser.add_argument('-a', '--all',                   action="store_true",  help='Plot all the variables separately')
-    parser.add_argument('-l', '--legend',                action="store_true",  help='Add legend')
+    parser.add_argument('-p', '--path',   default=None,    action="store",       help='Path to file')
+    parser.add_argument('-x', '--xvar',   default=None,    action="store",       help='Variable for x-axis')
+    parser.add_argument('-y', '--yvar',   default=None,    action="store",       help='Variable for y-axis')
+    parser.add_argument('-g', '--grid',                    action="store_true",  help='Activate Grid')
+    parser.add_argument('-t', '--hist',                    action="store_true",  help='Plot histogram')
+    parser.add_argument('-s', '--sep',    default=',',     action="store",       help='Pandas dataframe separator')
+    parser.add_argument('-a', '--all',                     action="store_true",  help='Plot all the variables separately')
+    parser.add_argument('-l', '--legend',                  action="store_true",  help='Add legend')
     args = parser.parse_args()
 
 
@@ -95,9 +108,6 @@ def plot1d() -> tuple:
 
             cnt  = 0
             cols = data.columns
-
-            #for rr in range(valid_pairs[0]):
-            #    for cc in range(valid_pairs[1]):
 
             for rrcc, ax2 in enumerate(ax.flatten()):
 
