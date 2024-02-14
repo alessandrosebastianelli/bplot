@@ -183,7 +183,9 @@ def plot1d() -> tuple:
             if lege: ax.legend()
     
     # Global settings
-    if grid: ax.grid()
+    if grid: 
+        for axis in ax.flatten(): 
+            axis.grid()
 
     plt.show()
 
