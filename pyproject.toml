@@ -2,12 +2,13 @@
 requires = [
             "numpy", 
             "matplotlib",
-            "pandas"
+            "pandas",
+            "pyosv"
             ]
 
 [project]
 name = "bplot"
-version = "0.2.3"
+version = "0.2.4"
 authors = [
   { name="Alessandro Sebastianelli", email="alessandro.sebastianelli1995@gmail.com" },
 ]
@@ -23,7 +24,8 @@ classifiers = [
 dependencies = [
             "numpy", 
             "matplotlib",
-            "pandas"
+            "pandas",
+            "pyosv"
             ]
 
 [project.urls]

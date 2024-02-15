@@ -1,6 +1,6 @@
 package:
   name: bplot
-  version: "0.2.3"
+  version: "0.2.4"
 
 source:
   path: ./
@@ -20,6 +20,7 @@ requirements:
     - numpy, 
     - matplotlib,
     - pandas
+    - pyosv
 
 test:
   imports:
