@@ -30,18 +30,19 @@ def __read_data(path : str, sep : str) -> pd.DataFrame():
 
 def hist1d() -> tuple:
     '''
-        Plot 1D variables
+        Histogram of 1D variables
 
         Arguments
         ---------
         - -p/--path   [optional]: path of the pandas-readable file from where to load the data,          
-        - -x/--xvar   [optional]: name of the variable in the pandas-readable file to be used for the x-axis
         - -y/--yvar   [optional]: name of the variable in the pandas-readable file to be used for the y-axis
         - -g/--grid   [optional]: it will add grids to the plot
         - -s/--sep    [optional]: pandas dataframe separator
         - -a/--all    [optional]: it will diplay all the variables in different plots
         - -l/--legend [optional]: it will add the legend to the plots
         - -m/--marker [optional]: it will add markers to the plot
+        - -b/--bins   [optional]: number of bins for the histogram
+
         Returns
         -------
         - fig: matplotlib figure
@@ -66,7 +67,7 @@ def hist1d() -> tuple:
     grid = args.grid
     allp = args.all
     lege = args.legend
-    bins = args.bins
+    bins = int(args.bins)
 
     if allp:
         
