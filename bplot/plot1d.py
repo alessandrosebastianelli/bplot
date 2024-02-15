@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 import argparse
 import logging
+import random
 import json
 
 
@@ -34,7 +35,7 @@ def __best_axis_comb(c : int) -> list:
     
     return valid_pairs
 
-def __read_data(path : str, sep : str) -> pd.DataFrame:
+def __read_data(path : str, sep : str) -> pd.DataFrame():
     '''
         Load and/or process pandas dataframe using path
 
@@ -68,7 +69,7 @@ def plot1d() -> tuple:
         - -s/--sep    [optional]: pandas dataframe separator
         - -a/--all    [optional]: it will diplay all the variables in different plots
         - -l/--legend [optional]: it will add the legend to the plots
-
+        - -m/--marker [optional]: it will add markers to the plot
         Returns
         -------
         - fig: matplotlib figure
@@ -84,6 +85,7 @@ def plot1d() -> tuple:
     parser.add_argument('-s', '--sep',    default=',',     action="store",       help='Pandas dataframe separator')
     parser.add_argument('-a', '--all',                     action="store_true",  help='Plot all the variables separately')
     parser.add_argument('-l', '--legend',                  action="store_true",  help='Add legend')
+    parser.add_argument('-m', '--marker',                  action="store_true",  help='Activate markers')
     args = parser.parse_args()
 
 
@@ -96,6 +98,10 @@ def plot1d() -> tuple:
     hist = args.hist
     allp = args.all
     lege = args.legend
+    mark = args.marker
+
+    if mark is True: markers=[".", ",", "o", "v", "^", "<", ">", "1", "2", "3", "4", "8", "s", "p", "P", "*", "h", "H", "+", "x", "X", "D", "d", "|", "_"]
+    # style '-', '--', '-.', ':', 'None', ' ', '', 'solid', 'dashed', 'dashdot', 'dotted'
 
      # Plott all separated
     if allp:
@@ -113,11 +119,15 @@ def plot1d() -> tuple:
 
             for rrcc, ax2 in enumerate(ax.flatten()):
 
+                if mark: 
+                    marker = f'{str(random.choice(markers))}'
+                else: marker    = None
+
                 if xvar is not None:
-                    if rrcc % 2 == 0: ax2.plot(data[xvar], data[cols[cnt]], label=cols[cnt])
+                    if rrcc % 2 == 0: ax2.plot(data[xvar], data[cols[cnt]], marker=marker, label=cols[cnt])
                     if rrcc % 2 == 1: ax2.hist(data[cols[cnt]], 200, orientation='horizontal', label=cols[cnt])
                 else:                                     
-                    if rrcc % 2 == 0: ax2.plot(data[cols[cnt]], label=cols[cnt])
+                    if rrcc % 2 == 0: ax2.plot(data[cols[cnt]], marker=marker, label=cols[cnt])
                     if rrcc % 2 == 1: ax2.hist(data[cols[cnt]], 200, orientation='horizontal', label=cols[cnt])
 
                 if rrcc % 2 == 1: cnt += 1
@@ -132,10 +142,13 @@ def plot1d() -> tuple:
 
             for rrcc, ax2 in enumerate(ax.flatten()):
 
+                if mark: marker = f'{random.choice(markers)}'
+                else: marker    = None
+
                 if xvar is not None:
-                    ax2.plot(data[xvar], data[cols[cnt]], label=cols[cnt])
+                    ax2.plot(data[xvar], data[cols[cnt]], marker=marker, label=cols[cnt])
                 else:                                     
-                    ax2.plot(data[cols[cnt]], label=cols[cnt])
+                    ax2.plot(data[cols[cnt]], marker=marker, label=cols[cnt])
 
                 cnt += 1
                 if lege: ax2.legend()
@@ -146,19 +159,30 @@ def plot1d() -> tuple:
             fig, ax = plt.subplots(nrows=1, ncols=2, gridspec_kw={'width_ratios': [3,1]})
 
             if xvar is not None and yvar is not None: 
-                ax[0].plot(data[xvar], data[yvar], label=yvar)
+                if mark: marker = f'{random.choice(markers)}'
+                else: marker    = None
+
+                ax[0].plot(data[xvar], data[yvar], marker=marker, label=yvar)
                 ax[1].hist(data[yvar], 200, orientation='horizontal', label=yvar)
             elif xvar is not None and yvar is None:   
                 for col in data.columns:
                     if col is not xvar:
-                        ax[0].plot(data[xvar], data[col], label=col)
+                        if mark: marker = f'{random.choice(markers)}'
+                        else: marker    = None
+                        ax[0].plot(data[xvar], data[col], marker=marker, label=col)
                         ax[1].hist(data[col], 200, orientation='horizontal', label=col)
-            elif xvar is None and yvar is not None:   
-                ax[0].plot(data[yvar], label=yvar)
+            elif xvar is None and yvar is not None:
+                if mark: marker = f'{random.choice(markers)}'
+                else: marker    = None
+
+                ax[0].plot(data[yvar], marker=marker, label=yvar)
                 ax[1].hist(data[yvar], 200, orientation='horizontal', label=yvar)
             else:                                     
                 for col in data.columns:
-                    ax[0].plot(data[col], label=col)
+                    if mark: marker = f'{random.choice(markers)}'
+                    else: marker    = None
+
+                    ax[0].plot(data[col], marker=marker, label=col)
                     ax[1].hist(data[col], 200, orientation='horizontal', label=col)
         
             if lege: ax[0].legend()
@@ -168,17 +192,29 @@ def plot1d() -> tuple:
         else:
             fig, ax = plt.subplots(nrows=1, ncols=1)
 
-            if xvar   is not None and yvar is not None: 
-                ax.plot(data[xvar], data[yvar], label=yvar)
+            if xvar   is not None and yvar is not None:
+                if mark: marker = f'{random.choice(markers)}'
+                else: marker    = None
+
+                ax.plot(data[xvar], data[yvar], marker=marker, label=yvar)
             elif xvar is not None and yvar is     None: 
                 for col in data.columns:
+                    if mark: marker = f'{random.choice(markers)}'
+                    else: marker    = None
+                    
                     if col is not xvar:
-                        ax.plot(data[xvar], data[col], label=col)
+                        ax.plot(data[xvar], data[col], marker=marker, label=col)
             elif xvar is     None and yvar is not None:
-                ax.plot(data[yvar], label=yvar)
+                if mark: marker = f'{random.choice(markers)}'
+                else: marker    = None
+
+                ax.plot(data[yvar], marker=marker, label=yvar)
             else:                                       
                 for col in data.columns:
-                    ax.plot(data[col], label=col)
+                    if mark: marker = f'{random.choice(markers)}'
+                    else: marker    = None
+                    
+                    ax.plot(data[col], marker=marker, label=col)
         
             if lege: ax.legend()
     
