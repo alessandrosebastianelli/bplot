@@ -92,7 +92,8 @@ setup(
         entry_points={
             'console_scripts': [
                 'bplottest   = bplot.test:test',
-                'bplot1d     = bplot.plot1d:plot1d'
+                'bplot1d     = bplot.plot1d:plot1d',
+				'bscatter1d    = bplot.scatter1d:scatter1d'
             ]
         }
 	)

@@ -28,7 +28,7 @@ def __read_data(path : str, sep : str) -> pd.DataFrame():
     db  = pd.read_csv(path, sep=sep)
     return db
 
-def plot1d() -> tuple:
+def hist1d() -> tuple:
     '''
         Plot 1D variables
 
@@ -50,28 +50,23 @@ def plot1d() -> tuple:
 
     parser = argparse.ArgumentParser()
     parser.add_argument('-p', '--path',   default=None,    action="store",       help='Path to file')
-    parser.add_argument('-x', '--xvar',   default=None,    action="store",       help='Variable for x-axis')
     parser.add_argument('-y', '--yvar',   required=True,   action="append",      help='Variable for y-axis (append using -y y1 -y -y2)')
     parser.add_argument('-g', '--grid',                    action="store_true",  help='Activate Grid')
     parser.add_argument('-s', '--sep',    default=',',     action="store",       help='Pandas dataframe separator')
     parser.add_argument('-a', '--all',                     action="store_true",  help='Create separate plots')
     parser.add_argument('-l', '--legend',                  action="store_true",  help='Add legend')
-    parser.add_argument('-m', '--marker',                  action="store_true",  help='Activate markers')
+    parser.add_argument('-b', '--bins',   default=100,     action="store",       help='Bins for histogram')
     args = parser.parse_args()
 
 
     # Read Data    
     data = __read_data(args.path, args.sep)
     # Arguments  
-    xvar = args.xvar
     yvars = args.yvar
     grid = args.grid
     allp = args.all
     lege = args.legend
-    mark = args.marker
-
-    if mark is True: markers=[".", ",", "o", "v", "^", "<", ">", "1", "2", "3", "4", "8", "s", "p", "P", "*", "h", "H", "+", "x", "X", "D", "d", "|", "_"]
-    # style '-', '--', '-.', ':', 'None', ' ', '', 'solid', 'dashed', 'dashdot', 'dotted'
+    bins = args.bins
 
     if allp:
         
@@ -81,15 +76,14 @@ def plot1d() -> tuple:
 
             # Filling kwargs
             if lege is True: kwargs['label'] = yvar
-            if mark is True: kwargs['marker'] = random.choice(markers)
+            kwargs['bins'] = bins
 
             # Filling args
-            if xvar is not None: args.append(data[xvar])
             args.append(data[yvar])
 
 
             fig, ax = plt.subplots(nrows=1, ncols=1)
-            ax.plot(*args, **kwargs)
+            ax.hist(*args, **kwargs)
 
 
             if lege is True: ax.legend()
@@ -105,15 +99,14 @@ def plot1d() -> tuple:
 
         # Filling kwargs
         if lege is True: kwargs['label'] = yvars
-        if mark is True: kwargs['marker'] = random.choice(markers)
+        kwargs['bins'] = bins
 
         # Filling args
-        if xvar is not None: args.append(data[xvar])
         args.append(data[yvars])
 
 
         fig, ax = plt.subplots(nrows=1, ncols=1)
-        ax.plot(*args, **kwargs)
+        ax.hist(*args, **kwargs)
 
         if lege is True: ax.legend()
         if grid is True: ax.grid()
@@ -123,4 +116,4 @@ def plot1d() -> tuple:
 
 
 if __name__ == '__main__':
-    plot1d()
+    hist1d()

@@ -7,7 +7,6 @@ import logging
 import random
 import json
 
-
 def __read_data(path : str, sep : str) -> pd.DataFrame():
     '''
         Load and/or process pandas dataframe using path
@@ -28,7 +27,7 @@ def __read_data(path : str, sep : str) -> pd.DataFrame():
     db  = pd.read_csv(path, sep=sep)
     return db
 
-def plot1d() -> tuple:
+def scatter1d() -> tuple:
     '''
         Plot 1D variables
 
@@ -50,7 +49,7 @@ def plot1d() -> tuple:
 
     parser = argparse.ArgumentParser()
     parser.add_argument('-p', '--path',   default=None,    action="store",       help='Path to file')
-    parser.add_argument('-x', '--xvar',   default=None,    action="store",       help='Variable for x-axis')
+    parser.add_argument('-x', '--xvar',   required=True,    action="store",       help='Variable for x-axis')
     parser.add_argument('-y', '--yvar',   required=True,   action="append",      help='Variable for y-axis (append using -y y1 -y -y2)')
     parser.add_argument('-g', '--grid',                    action="store_true",  help='Activate Grid')
     parser.add_argument('-s', '--sep',    default=',',     action="store",       help='Pandas dataframe separator')
@@ -70,7 +69,7 @@ def plot1d() -> tuple:
     lege = args.legend
     mark = args.marker
 
-    if mark is True: markers=[".", ",", "o", "v", "^", "<", ">", "1", "2", "3", "4", "8", "s", "p", "P", "*", "h", "H", "+", "x", "X", "D", "d", "|", "_"]
+    if mark is True: markers=[".", "o", "*", "+", "x", "d"]
     # style '-', '--', '-.', ':', 'None', ' ', '', 'solid', 'dashed', 'dashdot', 'dotted'
 
     if allp:
@@ -84,12 +83,12 @@ def plot1d() -> tuple:
             if mark is True: kwargs['marker'] = random.choice(markers)
 
             # Filling args
-            if xvar is not None: args.append(data[xvar])
+            args.append(data[xvar])
             args.append(data[yvar])
 
 
             fig, ax = plt.subplots(nrows=1, ncols=1)
-            ax.plot(*args, **kwargs)
+            ax.scatter(*args, **kwargs)
 
 
             if lege is True: ax.legend()
@@ -98,29 +97,48 @@ def plot1d() -> tuple:
 
         plt.show()
 
-    
     else:
-        args = []
-        kwargs = {}
+        if len(yvars)>1:
+            fig, ax = plt.subplots(nrows=1, ncols=1)
+            for yvar in yvars:
+                args = []
+                kwargs = {}
 
-        # Filling kwargs
-        if lege is True: kwargs['label'] = yvars
-        if mark is True: kwargs['marker'] = random.choice(markers)
+                # Filling kwargs
+                if lege is True: kwargs['label'] = yvar
+                if mark is True: kwargs['marker'] = random.choice(markers)
 
-        # Filling args
-        if xvar is not None: args.append(data[xvar])
-        args.append(data[yvars])
+                # Filling args
+                args.append(data[xvar])
+                args.append(data[yvar])
+
+                ax.scatter(*args, **kwargs)
+
+            if lege is True: ax.legend()
+            if grid is True: ax.grid()
+            
+            plt.show()
+        else:
+            args = []
+            kwargs = {}
+
+            # Filling kwargs
+            if lege is True: kwargs['label'] = yvars[0]
+            if mark is True: kwargs['marker'] = random.choice(markers)
+
+            args.append(data[xvar])
+            args.append(data[yvars])
 
 
-        fig, ax = plt.subplots(nrows=1, ncols=1)
-        ax.plot(*args, **kwargs)
+            fig, ax = plt.subplots(nrows=1, ncols=1)
+            ax.scatter(*args, **kwargs)
 
-        if lege is True: ax.legend()
-        if grid is True: ax.grid()
-        plt.show()
+            if lege is True: ax.legend()
+            if grid is True: ax.grid()
+            plt.show()
 
     return fig, ax
 
 
 if __name__ == '__main__':
-    plot1d()
+    scatter1d()
