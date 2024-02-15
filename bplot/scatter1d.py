@@ -29,7 +29,7 @@ def __read_data(path : str, sep : str) -> pd.DataFrame():
 
 def scatter1d() -> tuple:
     '''
-        Plot 1D variables
+        Scatter plot of 1D variables
 
         Arguments
         ---------
@@ -41,6 +41,7 @@ def scatter1d() -> tuple:
         - -a/--all    [optional]: it will diplay all the variables in different plots
         - -l/--legend [optional]: it will add the legend to the plots
         - -m/--marker [optional]: it will add markers to the plot
+        
         Returns
         -------
         - fig: matplotlib figure
