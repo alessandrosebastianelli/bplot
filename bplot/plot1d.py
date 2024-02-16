@@ -42,6 +42,7 @@ def plot1d() -> tuple:
         - -a/--all    [optional]: it will diplay all the variables in different plots
         - -l/--legend [optional]: it will add the legend to the plots
         - -m/--marker [optional]: it will add markers to the plot
+        
         Returns
         -------
         - fig: matplotlib figure
