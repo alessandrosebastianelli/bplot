@@ -46,6 +46,7 @@ def plot2d() -> tuple:
     path = args.path
 
     if path is None: path = filedialog.askopenfilename()
+    print(path)
     data, _, _ = load(path)
     
     # Arguments  
@@ -59,7 +60,9 @@ def plot2d() -> tuple:
     
     if '.nc' in args.path: data = np.moveaxis(data.variables[var], 0, -1)
     if (len(bands) != 1) and (len(bands) != 3): raise Exception('Bands can be 1 or 3')
-    if len(bands) == 1: args = data[:,:,bands[0]]
+    if len(bands) == 1:  
+        if len(data.shape) < 3: args = data 
+        else: args = data[:,:,bands[0]]
     if len(bands) == 3: 
         args = np.moveaxis(np.array([data[:,:,bands[0]],data[:,:,bands[1]],data[:,:,bands[2]]]), 0, -1)
         args = (args - vmin) / (vmax - vmin)
