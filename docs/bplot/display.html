@@ -32,7 +32,7 @@
             <h2>Functions</h2>
                 <ul class="memberlist">
             <li>
-                    <a class="function" href="#show">show</a>
+                    <a class="function" href="#display">display</a>
             </li>
     </ul>
 
@@ -48,12 +48,12 @@
     <main class="pdoc">
             <section class="module-info">
                     <h1 class="modulename">
-<a href="./../bplot.html">bplot</a><wbr>.show    </h1>
+<a href="./../bplot.html">bplot</a><wbr>.display    </h1>
 
                 
-                        <input id="mod-show-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+                        <input id="mod-display-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 
-                        <label class="view-source-button" for="mod-show-view-source"><span>View Source</span></label>
+                        <label class="view-source-button" for="mod-display-view-source"><span>View Source</span></label>
 
                         <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="kn">import</span><span class="w"> </span><span class="nn">cartopy.mpl.ticker</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cticker</span>
 </span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
@@ -69,7 +69,7 @@
 </span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a>
 </span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">pyosv.io.reader</span><span class="w"> </span><span class="kn">import</span> <span class="n">load</span>
 </span><span id="L-14"><a href="#L-14"><span class="linenos">14</span></a>
-</span><span id="L-15"><a href="#L-15"><span class="linenos">15</span></a><span class="k">def</span><span class="w"> </span><span class="nf">show</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+</span><span id="L-15"><a href="#L-15"><span class="linenos">15</span></a><span class="k">def</span><span class="w"> </span><span class="nf">display</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
 </span><span id="L-16"><a href="#L-16"><span class="linenos">16</span></a><span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 </span><span id="L-17"><a href="#L-17"><span class="linenos">17</span></a><span class="sd">        Plot images</span>
 </span><span id="L-18"><a href="#L-18"><span class="linenos">18</span></a>
@@ -106,56 +106,56 @@
 </span><span id="L-49"><a href="#L-49"><span class="linenos">49</span></a>
 </span><span id="L-50"><a href="#L-50"><span class="linenos">50</span></a>
 </span><span id="L-51"><a href="#L-51"><span class="linenos">51</span></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-</span><span id="L-52"><a href="#L-52"><span class="linenos">52</span></a>    <span class="n">show</span><span class="p">()</span>
+</span><span id="L-52"><a href="#L-52"><span class="linenos">52</span></a>    <span class="n">display</span><span class="p">()</span>
 </span></pre></div>
 
 
             </section>
-                <section id="show">
-                            <input id="show-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+                <section id="display">
+                            <input id="display-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">show</span><span class="signature pdoc-code condensed">(<span class="return-annotation">) -> <span class="nb">tuple</span>:</span></span>
+        <span class="name">display</span><span class="signature pdoc-code condensed">(<span class="return-annotation">) -> <span class="nb">tuple</span>:</span></span>
 
-                <label class="view-source-button" for="show-view-source"><span>View Source</span></label>
+                <label class="view-source-button" for="display-view-source"><span>View Source</span></label>
 
     </div>
-    <a class="headerlink" href="#show"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="show-16"><a href="#show-16"><span class="linenos">16</span></a><span class="k">def</span><span class="w"> </span><span class="nf">show</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
-</span><span id="show-17"><a href="#show-17"><span class="linenos">17</span></a><span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
-</span><span id="show-18"><a href="#show-18"><span class="linenos">18</span></a><span class="sd">        Plot images</span>
-</span><span id="show-19"><a href="#show-19"><span class="linenos">19</span></a>
-</span><span id="show-20"><a href="#show-20"><span class="linenos">20</span></a><span class="sd">        Arguments</span>
-</span><span id="show-21"><a href="#show-21"><span class="linenos">21</span></a><span class="sd">        ---------</span>
-</span><span id="show-22"><a href="#show-22"><span class="linenos">22</span></a><span class="sd">        - -p/--path   [optional]: path of the image to show</span>
-</span><span id="show-23"><a href="#show-23"><span class="linenos">23</span></a>
-</span><span id="show-24"><a href="#show-24"><span class="linenos">24</span></a><span class="sd">        Returns</span>
-</span><span id="show-25"><a href="#show-25"><span class="linenos">25</span></a><span class="sd">        -------</span>
-</span><span id="show-26"><a href="#show-26"><span class="linenos">26</span></a><span class="sd">        - fig: matplotlib figure</span>
-</span><span id="show-27"><a href="#show-27"><span class="linenos">27</span></a><span class="sd">        - ax: matplolib ax/axes</span>
-</span><span id="show-28"><a href="#show-28"><span class="linenos">28</span></a><span class="sd">    &#39;&#39;&#39;</span>
-</span><span id="show-29"><a href="#show-29"><span class="linenos">29</span></a>
-</span><span id="show-30"><a href="#show-30"><span class="linenos">30</span></a>    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
-</span><span id="show-31"><a href="#show-31"><span class="linenos">31</span></a>    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-p&#39;</span><span class="p">,</span> <span class="s1">&#39;--path&#39;</span><span class="p">,</span>   <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>    <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store&quot;</span><span class="p">,</span>       <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Path to file&#39;</span><span class="p">)</span>
-</span><span id="show-32"><a href="#show-32"><span class="linenos">32</span></a>    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
-</span><span id="show-33"><a href="#show-33"><span class="linenos">33</span></a>
-</span><span id="show-34"><a href="#show-34"><span class="linenos">34</span></a>    <span class="c1"># Read Data    </span>
-</span><span id="show-35"><a href="#show-35"><span class="linenos">35</span></a>    <span class="n">path</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">path</span>
-</span><span id="show-36"><a href="#show-36"><span class="linenos">36</span></a>
-</span><span id="show-37"><a href="#show-37"><span class="linenos">37</span></a>    <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">path</span> <span class="o">=</span> <span class="n">filedialog</span><span class="o">.</span><span class="n">askopenfilename</span><span class="p">()</span>
-</span><span id="show-38"><a href="#show-38"><span class="linenos">38</span></a>    <span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-</span><span id="show-39"><a href="#show-39"><span class="linenos">39</span></a>    <span class="n">data</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-</span><span id="show-40"><a href="#show-40"><span class="linenos">40</span></a>    
-</span><span id="show-41"><a href="#show-41"><span class="linenos">41</span></a>    
-</span><span id="show-42"><a href="#show-42"><span class="linenos">42</span></a>    <span class="c1"># Plot </span>
-</span><span id="show-43"><a href="#show-43"><span class="linenos">43</span></a>    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="show-44"><a href="#show-44"><span class="linenos">44</span></a>
-</span><span id="show-45"><a href="#show-45"><span class="linenos">45</span></a>    <span class="n">p</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-</span><span id="show-46"><a href="#show-46"><span class="linenos">46</span></a>
-</span><span id="show-47"><a href="#show-47"><span class="linenos">47</span></a>    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</span><span id="show-48"><a href="#show-48"><span class="linenos">48</span></a>
-</span><span id="show-49"><a href="#show-49"><span class="linenos">49</span></a>    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
+    <a class="headerlink" href="#display"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="display-16"><a href="#display-16"><span class="linenos">16</span></a><span class="k">def</span><span class="w"> </span><span class="nf">display</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+</span><span id="display-17"><a href="#display-17"><span class="linenos">17</span></a><span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+</span><span id="display-18"><a href="#display-18"><span class="linenos">18</span></a><span class="sd">        Plot images</span>
+</span><span id="display-19"><a href="#display-19"><span class="linenos">19</span></a>
+</span><span id="display-20"><a href="#display-20"><span class="linenos">20</span></a><span class="sd">        Arguments</span>
+</span><span id="display-21"><a href="#display-21"><span class="linenos">21</span></a><span class="sd">        ---------</span>
+</span><span id="display-22"><a href="#display-22"><span class="linenos">22</span></a><span class="sd">        - -p/--path   [optional]: path of the image to show</span>
+</span><span id="display-23"><a href="#display-23"><span class="linenos">23</span></a>
+</span><span id="display-24"><a href="#display-24"><span class="linenos">24</span></a><span class="sd">        Returns</span>
+</span><span id="display-25"><a href="#display-25"><span class="linenos">25</span></a><span class="sd">        -------</span>
+</span><span id="display-26"><a href="#display-26"><span class="linenos">26</span></a><span class="sd">        - fig: matplotlib figure</span>
+</span><span id="display-27"><a href="#display-27"><span class="linenos">27</span></a><span class="sd">        - ax: matplolib ax/axes</span>
+</span><span id="display-28"><a href="#display-28"><span class="linenos">28</span></a><span class="sd">    &#39;&#39;&#39;</span>
+</span><span id="display-29"><a href="#display-29"><span class="linenos">29</span></a>
+</span><span id="display-30"><a href="#display-30"><span class="linenos">30</span></a>    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+</span><span id="display-31"><a href="#display-31"><span class="linenos">31</span></a>    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-p&#39;</span><span class="p">,</span> <span class="s1">&#39;--path&#39;</span><span class="p">,</span>   <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>    <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store&quot;</span><span class="p">,</span>       <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Path to file&#39;</span><span class="p">)</span>
+</span><span id="display-32"><a href="#display-32"><span class="linenos">32</span></a>    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+</span><span id="display-33"><a href="#display-33"><span class="linenos">33</span></a>
+</span><span id="display-34"><a href="#display-34"><span class="linenos">34</span></a>    <span class="c1"># Read Data    </span>
+</span><span id="display-35"><a href="#display-35"><span class="linenos">35</span></a>    <span class="n">path</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">path</span>
+</span><span id="display-36"><a href="#display-36"><span class="linenos">36</span></a>
+</span><span id="display-37"><a href="#display-37"><span class="linenos">37</span></a>    <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">path</span> <span class="o">=</span> <span class="n">filedialog</span><span class="o">.</span><span class="n">askopenfilename</span><span class="p">()</span>
+</span><span id="display-38"><a href="#display-38"><span class="linenos">38</span></a>    <span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</span><span id="display-39"><a href="#display-39"><span class="linenos">39</span></a>    <span class="n">data</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</span><span id="display-40"><a href="#display-40"><span class="linenos">40</span></a>    
+</span><span id="display-41"><a href="#display-41"><span class="linenos">41</span></a>    
+</span><span id="display-42"><a href="#display-42"><span class="linenos">42</span></a>    <span class="c1"># Plot </span>
+</span><span id="display-43"><a href="#display-43"><span class="linenos">43</span></a>    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="display-44"><a href="#display-44"><span class="linenos">44</span></a>
+</span><span id="display-45"><a href="#display-45"><span class="linenos">45</span></a>    <span class="n">p</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span><span id="display-46"><a href="#display-46"><span class="linenos">46</span></a>
+</span><span id="display-47"><a href="#display-47"><span class="linenos">47</span></a>    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span><span id="display-48"><a href="#display-48"><span class="linenos">48</span></a>
+</span><span id="display-49"><a href="#display-49"><span class="linenos">49</span></a>    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
 </span></pre></div>
 
 

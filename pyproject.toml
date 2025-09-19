@@ -1,14 +1,10 @@
 [build-system]
-requires = [
-            "numpy", 
-            "matplotlib",
-            "pandas",
-            "pyosv"
-            ]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "bplot"
-version = "0.2.15"
+version = "0.3.0"
 authors = [
   { name="Alessandro Sebastianelli", email="alessandro.sebastianelli1995@gmail.com" },
 ]
@@ -17,16 +13,24 @@ readme = "README.md"
 license = { file="LICENSE" }
 requires-python = ">=3.10"
 classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
 ]
 dependencies = [
-            "numpy", 
-            "matplotlib",
-            "pandas",
-            "pyosv"
-            ]
+  "numpy",
+  "matplotlib",
+  "pandas",
+  "pyosv",
+]
+
+[project.scripts]
+bplottest  = "bplot.test:test"
+bplot1d    = "bplot.plot1d:plot1d"
+bscatter1d = "bplot.scatter1d:scatter1d"
+bhist1d    = "bplot.hist1d:hist1d"
+bplot2d    = "bplot.plot2d:plot2d"
+bshow      = "bplot.display:display"
 
 [project.urls]
 "Homepage" = "https://github.com/alessandrosebastianelli/bplot"

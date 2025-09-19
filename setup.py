@@ -16,7 +16,7 @@ def readme():
 # Package 
 HERE = pathlib.Path(__file__).parent
 PACKAGE_NAME  = 'bplot'
-VERSION = '0.2.15'
+VERSION = '0.3.0'
 AUTHOR = 'Alessandro Sebastianelli'
 AUTHOR_EMAIL = 'alessandro.sebastianelli1995@gmail.com'
 URL = 'https://github.com/alessandrosebastianelli/bplot.git'
@@ -80,17 +80,19 @@ setup(
         cmdclass={
             'develop': gitcmd_develop, 
             'install': gitcmd_install, 
-            'sdist': gitcmd_sdist,
+            'sdist':   gitcmd_sdist,
         }, 
         name=PACKAGE_NAME,
         version=VERSION,
         description=DESCRIPTION, 
         long_description_content_type=LONG_DESC_TYPE,
+		long_description=LONG_DESCRIPTION,
         author=AUTHOR, license=LICENSE, 
         author_email=AUTHOR_EMAIL, 
         url=URL, 
         install_requires=INSTALL_REQUIRES,
         packages=find_packages(),
+		include_package_data=True,
         entry_points={
             'console_scripts': [
                 'bplottest     = bplot.test:test',
@@ -98,7 +100,7 @@ setup(
 				'bscatter1d    = bplot.scatter1d:scatter1d',
 				'bhist1d       = bplot.hist1d:hist1d',
 				'bplot2d       = bplot.plot2d:plot2d',
-				'bshow         = bplot.show:show',
+				'bshow         = bplot.display:display'
             ]
         }
 	)

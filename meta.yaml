@@ -1,6 +1,6 @@
 package:
   name: bplot
-  version: "0.2.15
+  version: "0.3.0"
 
 source:
   path: ./
@@ -16,7 +16,7 @@ requirements:
     - setuptools
 
   run:
-    - python==3.10
+    - python,
     - numpy, 
     - matplotlib,
     - pandas

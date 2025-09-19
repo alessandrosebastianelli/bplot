@@ -12,7 +12,7 @@ import json
 
 from pyosv.io.reader import load
 
-def show() -> tuple:
+def display() -> tuple:
     '''
         Plot images
 
@@ -49,4 +49,4 @@ def show() -> tuple:
 
 
 if __name__ == '__main__':
-    show()
+    display()
