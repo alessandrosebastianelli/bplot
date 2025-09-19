@@ -16,7 +16,7 @@ def readme():
 # Package 
 HERE = pathlib.Path(__file__).parent
 PACKAGE_NAME  = 'bplot'
-VERSION = '0.2.12'
+VERSION = '0.2.15'
 AUTHOR = 'Alessandro Sebastianelli'
 AUTHOR_EMAIL = 'alessandro.sebastianelli1995@gmail.com'
 URL = 'https://github.com/alessandrosebastianelli/bplot.git'
@@ -97,7 +97,8 @@ setup(
                 'bplot1d       = bplot.plot1d:plot1d',
 				'bscatter1d    = bplot.scatter1d:scatter1d',
 				'bhist1d       = bplot.hist1d:hist1d',
-				'bplot2d       = bplot.plot2d:plot2d'
+				'bplot2d       = bplot.plot2d:plot2d',
+				'bshow         = bplot.show:show',
             ]
         }
 	)
